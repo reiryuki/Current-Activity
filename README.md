@@ -3,7 +3,7 @@
 ## Descriptions
 An app powered by Tasker and an importable Tasker project xml
 
-## Feature
+## Features
 - Get current activity by clicking the notification
 - Copy the result to clipboard
 - Does not require accessibility service
@@ -24,7 +24,7 @@ v0.1
 - Android 8.1 (SDK 27) and up for the app
 - Tasker app for the project xml
 
-## Download Link
+## Download Links
 - App: http://ddl.to/d/7dAzP
 - Tasker project xml: http://ddl.to/d/7dAzO
 
