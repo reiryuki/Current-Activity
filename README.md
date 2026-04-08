@@ -17,7 +17,7 @@ v0.2
 v0.1
 - Initial release
 
-## Screenshots
+## Screenshot
 - https://t.me/ryukimodsscreenshots/113
 
 ## Requirements
