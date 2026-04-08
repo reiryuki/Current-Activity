@@ -24,9 +24,9 @@ v0.1
 - Android 8.1 (SDK 27) and up for the app
 - Tasker app for the project xml
 
-## Download Link & Instructions
-- App: 
-- Tasker project xml: 
+## Download Link
+- App: http://ddl.to/d/7dAzP
+- Tasker project xml: http://ddl.to/d/7dAzO
 
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
