@@ -10,6 +10,9 @@ An app powered by Tasker
 
 ## Changelog
 
+v0.3
+- Separate package and activity notification
+
 v0.2
 - Convert to apk
 - Does not require accessibility service
@@ -22,10 +25,9 @@ v0.1
 
 ## Requirements
 - Android 8.1 (SDK 27) and up
-- Tasker app for the project xml
 
 ## Download Link
- http://ddl.to/d/7dAzP
+- http://ddl.to/d/7eZeZ
 
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
