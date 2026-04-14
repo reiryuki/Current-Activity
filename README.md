@@ -21,7 +21,7 @@ v0.1
 - https://t.me/ryukimodsscreenshots/113
 
 ## Requirements
-- Android 8.1 (SDK 27) and up for the app
+- Android 8.1 (SDK 27) and up
 - Tasker app for the project xml
 
 ## Download Link
