@@ -1,7 +1,7 @@
 # Current Activity
 
 ## Descriptions
-An app powered by Tasker and an importable Tasker project xml
+An app powered by Tasker
 
 ## Features
 - Get current activity by clicking the notification
@@ -24,9 +24,8 @@ v0.1
 - Android 8.1 (SDK 27) and up for the app
 - Tasker app for the project xml
 
-## Download Links
-- App: http://ddl.to/d/7dAzP
-- Tasker project xml: http://ddl.to/d/7dAzO
+## Download Link
+ http://ddl.to/d/7dAzP
 
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
