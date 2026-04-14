@@ -4,9 +4,9 @@
 An app powered by Tasker
 
 ## Features
-- Get current activity by clicking the notification
+- Get current package and activity by clicking the notifications
 - Copy the result to clipboard
-- Does not require accessibility service
+- Does not require accessibility service nor root
 
 ## Changelog
 
