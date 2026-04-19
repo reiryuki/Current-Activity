@@ -27,7 +27,7 @@ v0.1
 - Android 8.1 (SDK 27) and up
 
 ## Download Link
-- http://ddl.to/d/7eZeZ
+- https://devuploads.com/za51wo90q05v
 
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
