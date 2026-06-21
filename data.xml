@@ -1,0 +1,76 @@
+<TaskerData sr=""dvi="1"tv="6.7.1-beta"><Task sr="task105"><id>105</id><Img sr="icn"ve="2"><nme>hd_aaa_conv_a</nme></Img><nme>Current Activity</nme><pri>100</pri><rty>1</rty><Action sr="act0"ve="7"><ConditionList sr="if"><Condition sr="c0"ve="3"><op>7</op><lhs>%SDK</lhs><rhs>32</rhs></Condition></ConditionList><se>false</se><Str sr="arg0"ve="3">android.permission.POST_NOTIFICATIONS</Str><Str sr="arg1"ve="3"/><code>319</code></Action><Action sr="act1"ve="7"><Str sr="arg0"ve="3">android.permission.PACKAGE_USAGE_STATS
+android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</Str><Str sr="arg1"ve="3"/><code>319</code></Action><Action sr="act2"ve="7"><se>false</se><Str sr="arg0"ve="3">android.permission.SYSTEM_ALERT_WINDOW</Str><Str sr="arg1"ve="3"/><code>319</code></Action><Action sr="act3"ve="7"><Str sr="arg0"ve="3">import android.content.Intent;
+import android.provider.Settings;
+import android.net.Uri;
+import com.joaomgcd.taskerm.action.java.JavaCodeException;
+
+/* 
+ * Requesting to ignore battery optimizations requires the user to manually 
+ * grant the permission in the system settings. 
+ */
+
+String packageName = context.getPackageName();
+
+/* 
+ * Check if the app already has permission to ignore battery optimizations. 
+ * This requires the REQUEST_IGNORE_BATTERY_OPTIMIZATIONS permission in the manifest.
+ */
+powerManager = context.getSystemService(android.content.Context.POWER_SERVICE);
+if (powerManager.isIgnoringBatteryOptimizations(packageName)) {
+    tasker.log("Battery optimization is already ignored for this app.");
+    return;
+}
+
+/* 
+ * Create an intent to open the specific system settings page for this app.
+ * This is the only way to request this permission without root/adb/shizuku.
+ */
+intent = new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+intent.setData(Uri.parse("package:" + packageName));
+intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+try {
+    context.startActivity(intent);
+    tasker.log("Opened battery optimization settings for user action.");
+} catch (Exception e) {
+    throw new JavaCodeException("Could not open battery settings: " + e.getMessage());
+}</Str><Str sr="arg1"ve="3"/><Int sr="arg2"val="1"/><code>474</code><label>Ignore battery optimization</label></Action><Action sr="act4"ve="7"><Str sr="arg0"ve="3">Please wait...</Str><Int sr="arg1"val="1"/><Int sr="arg2"val="0"/><Str sr="arg3"ve="3"/><Str sr="arg4"ve="3"/><Str sr="arg5"ve="3"/><Str sr="arg6"ve="3">#FF18C310</Str><Str sr="arg7"ve="3"/><Str sr="arg8"ve="3"/><Int sr="arg9"val="1"/><code>548</code><Str sr="arg10"ve="3"/><Int sr="arg11"val="1"/><Int sr="arg12"val="0"/><Str sr="arg13"ve="3"/><Int sr="arg14"val="0"/><Str sr="arg15"ve="3"/></Action><Action sr="act5"ve="7"><Str sr="arg0"ve="3">%numbers</Str><Str sr="arg1"ve="3">3,2,1</Str><Str sr="arg2"ve="3">,</Str><code>354</code></Action><Action sr="act6"ve="7"><Str sr="arg0"ve="3">%number</Str><Str sr="arg1"ve="3">%numbers()</Str><Int sr="arg2"val="0"/><code>39</code><coll>false</coll></Action><Action sr="act7"ve="7"><Str sr="arg0"ve="3">Current Activity</Str><Str sr="arg1"ve="3">Please wait %number...</Str><Img sr="arg2"ve="2"><nme>mw_action_assignment</nme></Img><Int sr="arg3"val="0"/><Int sr="arg4"val="1"/><Int sr="arg5"val="3"/><Int sr="arg6"val="0"/><Int sr="arg7"val="0"/><Int sr="arg8"val="0"/><Str sr="arg9"ve="3"/><code>523</code><Str sr="arg10"ve="3"/><Str sr="arg11"ve="3">Wait</Str><Str sr="arg12"ve="3"/><Int sr="arg13"val="0"/><Str sr="arg14"ve="3"/><Str sr="arg15"ve="3"/><ListElementItem sr="item0"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Activity</Str><Int sr="arg1"val="0"/><code>779</code></Action><label>Close</label></ListElementItem><ListElementItem sr="item1"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Activity Copy</Str><Int sr="arg1"><var>%priority</var></Int><Str sr="arg2"ve="3"/><Str sr="arg3"ve="3"/><Str sr="arg4"ve="3"/><Int sr="arg5"val="0"/><Int sr="arg6"val="0"/><Str sr="arg7"ve="3"/><Int sr="arg8"val="0"/><Int sr="arg9"val="0"/><code>130</code><Int sr="arg10"val="1"/></Action><label>Copy</label></ListElementItem></Action><Action sr="act8"ve="7"><Int sr="arg0"val="0"/><Int sr="arg1"val="1"/><Int sr="arg2"val="0"/><Int sr="arg3"val="0"/><Int sr="arg4"val="0"/><code>30</code></Action><Action sr="act9"ve="7"><code>40</code></Action><Action sr="act10"ve="7"><Bundle sr="arg0"><Vals sr="val"><net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type><net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%activity
+Activity
+The class name of the activity that's currently opened. You can launch this with the Launch App action by using packageName/activityName.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%package
+Package
+Unique package name for the app&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES></Vals></Bundle><Str sr="arg1"ve="3">GetCurrentAppAndActivity()</Str><code>365</code></Action><Action sr="act11"ve="7"><Str sr="arg0"ve="3">%CurrentPackage</Str><Str sr="arg1"ve="3">%package</Str><Int sr="arg2"val="0"/><Int sr="arg3"val="0"/><Int sr="arg4"val="0"/><Int sr="arg5"val="3"/><Int sr="arg6"val="1"/><code>547</code></Action><Action sr="act12"ve="7"><Str sr="arg0"ve="3">Current Package</Str><Str sr="arg1"ve="3">%CurrentPackage
+Click here to update</Str><Img sr="arg2"ve="2"><nme>mw_action_android</nme><tint>-1</tint></Img><Int sr="arg3"val="0"/><Int sr="arg4"val="1"/><Int sr="arg5"val="3"/><Int sr="arg6"val="0"/><Int sr="arg7"val="0"/><Int sr="arg8"val="0"/><Str sr="arg9"ve="3"/><code>523</code><Str sr="arg10"ve="3"/><Str sr="arg11"ve="3">Current Package</Str><Str sr="arg12"ve="3"/><Int sr="arg13"val="0"/><Str sr="arg14"ve="3"/><Str sr="arg15"ve="3"/><ListElementItem sr="item0"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Package</Str><Int sr="arg1"val="0"/><code>779</code></Action><label>Close</label></ListElementItem><ListElementItem sr="item1"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Package Copy</Str><Int sr="arg1"><var>%priority</var></Int><Str sr="arg2"ve="3"/><Str sr="arg3"ve="3"/><Str sr="arg4"ve="3"/><Int sr="arg5"val="0"/><Int sr="arg6"val="0"/><Str sr="arg7"ve="3"/><Int sr="arg8"val="0"/><Int sr="arg9"val="0"/><code>130</code><Int sr="arg10"val="1"/></Action><label>Copy</label></ListElementItem></Action><Action sr="act13"ve="7"><Str sr="arg0"ve="3">%CurrentActivity</Str><Str sr="arg1"ve="3">%activity</Str><Int sr="arg2"val="0"/><Int sr="arg3"val="0"/><Int sr="arg4"val="0"/><Int sr="arg5"val="3"/><Int sr="arg6"val="1"/><code>547</code></Action><Action sr="act14"ve="7"><Str sr="arg0"ve="3">Current Activity</Str><Str sr="arg1"ve="3">%CurrentActivity
+Click here to update</Str><Img sr="arg2"ve="2"><nme>mw_action_assignment</nme></Img><Int sr="arg3"val="0"/><Int sr="arg4"val="1"/><Int sr="arg5"val="3"/><Int sr="arg6"val="0"/><Int sr="arg7"val="0"/><Int sr="arg8"val="0"/><Str sr="arg9"ve="3"/><code>523</code><Str sr="arg10"ve="3"/><Str sr="arg11"ve="3">Current Activity</Str><Str sr="arg12"ve="3"/><Int sr="arg13"val="0"/><Str sr="arg14"ve="3"/><Str sr="arg15"ve="3"/><ListElementItem sr="item0"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Activity</Str><Int sr="arg1"val="0"/><code>779</code></Action><label>Close</label></ListElementItem><ListElementItem sr="item1"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Activity Copy</Str><Int sr="arg1"><var>%priority</var></Int><Str sr="arg2"ve="3"/><Str sr="arg3"ve="3"/><Str sr="arg4"ve="3"/><Int sr="arg5"val="0"/><Int sr="arg6"val="0"/><Str sr="arg7"ve="3"/><Int sr="arg8"val="0"/><Int sr="arg9"val="0"/><code>130</code><Int sr="arg10"val="1"/></Action><label>Copy</label></ListElementItem></Action><Action sr="act15"ve="7"><se>false</se><Str sr="arg0"ve="3">android.permission.EXPAND_STATUS_BAR</Str><Str sr="arg1"ve="3"/><code>319</code></Action><Action sr="act16"ve="7"><se>false</se><Str sr="arg0"ve="3">import android.content.Intent;
+import android.content.Context;
+import android.app.StatusBarManager;
+
+/* 
+ * The StatusBarManager is a system service that allows controlling the status bar.
+ * Note: This requires the EXPAND_STATUS_BAR permission, which is granted to 
+ * system-level apps or apps with specific signatures. In Tasker, this 
+ * functionality is often restricted by Android's security model.
+ */
+
+try {
+    /* Get the status bar service from the context. */
+    statusBarService = context.getSystemService("statusbar");
+
+    /* 
+     * Use reflection to call the hidden 'expandNotificationsPanel' method.
+     * Since we cannot use standard reflection classes, we rely on the 
+     * BeanShell interpreter's ability to invoke methods dynamically.
+     */
+    statusBarService.expandNotificationsPanel();
+} catch (Exception e) {
+    /* 
+     * If the method is not accessible or the permission is missing, 
+     * this will fail. This is expected behavior on most modern Android 
+     * versions without specific system privileges.
+     */
+    tasker.log("Error: Unable to expand status bar. Permission or API restriction.");
+}</Str><Str sr="arg1"ve="3"/><Int sr="arg2"val="1"/><code>474</code><label>Expand status bar</label></Action><cdate>1593241204716</cdate><edate>1776154967713</edate></Task><Task sr="task156"><id>156</id><nme>Current Activity Permission</nme><Action sr="act0"ve="7"><Str sr="arg0"ve="3">android.permission.REQUEST_COMPANION_RUN_IN_BACKGROUND</Str><Str sr="arg1"ve="3"/><code>319</code></Action><cdate>1775890186323</cdate><edate>1776154826132</edate></Task><Task sr="task264"><id>264</id><nme>Current Package Copy</nme><pri>100</pri><rty>1</rty><Action sr="act0"ve="7"><Str sr="arg0"ve="3">%CurrentPackage</Str><Int sr="arg1"val="0"/><Str sr="arg2"ve="3"/><Int sr="arg3"val="0"/><code>105</code></Action><Action sr="act1"ve="7"><Str sr="arg0"ve="3">Current Package</Str><Str sr="arg1"ve="3">%CurrentPackage
+Click here to update
+Copied</Str><Img sr="arg2"ve="2"><nme>mw_action_android</nme><tint>-1</tint></Img><Int sr="arg3"val="0"/><Int sr="arg4"val="1"/><Int sr="arg5"val="3"/><Int sr="arg6"val="0"/><Int sr="arg7"val="0"/><Int sr="arg8"val="0"/><Str sr="arg9"ve="3"/><code>523</code><Str sr="arg10"ve="3"/><Str sr="arg11"ve="3">Current Package</Str><Str sr="arg12"ve="3"/><Int sr="arg13"val="0"/><Str sr="arg14"ve="3"/><Str sr="arg15"ve="3"/><ListElementItem sr="item0"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Package</Str><Int sr="arg1"val="0"/><code>779</code></Action><label>Close</label></ListElementItem><ListElementItem sr="item1"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Package Copy</Str><Int sr="arg1"><var>%priority</var></Int><Str sr="arg2"ve="3"/><Str sr="arg3"ve="3"/><Str sr="arg4"ve="3"/><Int sr="arg5"val="0"/><Int sr="arg6"val="0"/><Str sr="arg7"ve="3"/><Int sr="arg8"val="0"/><Int sr="arg9"val="0"/><code>130</code><Int sr="arg10"val="1"/></Action><label>Copy</label></ListElementItem></Action><cdate>1702439931526</cdate><edate>1776154417094</edate></Task><Task sr="task12"><id>12</id><nme>Current Activity Copy</nme><pri>100</pri><rty>1</rty><Action sr="act0"ve="7"><Str sr="arg0"ve="3">%CurrentActivity</Str><Int sr="arg1"val="0"/><Str sr="arg2"ve="3"/><Int sr="arg3"val="0"/><code>105</code></Action><Action sr="act1"ve="7"><Str sr="arg0"ve="3">Current Activity</Str><Str sr="arg1"ve="3">%CurrentActivity
+Click here to update
+Copied</Str><Img sr="arg2"ve="2"><nme>mw_action_assignment</nme></Img><Int sr="arg3"val="0"/><Int sr="arg4"val="1"/><Int sr="arg5"val="3"/><Int sr="arg6"val="0"/><Int sr="arg7"val="0"/><Int sr="arg8"val="0"/><Str sr="arg9"ve="3"/><code>523</code><Str sr="arg10"ve="3"/><Str sr="arg11"ve="3">Current Activity</Str><Str sr="arg12"ve="3"/><Int sr="arg13"val="0"/><Str sr="arg14"ve="3"/><Str sr="arg15"ve="3"/><ListElementItem sr="item0"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Activity</Str><Int sr="arg1"val="0"/><code>779</code></Action><label>Close</label></ListElementItem><ListElementItem sr="item1"><Action sr="action"ve="7"><Str sr="arg0"ve="3">Current Activity Copy</Str><Int sr="arg1"><var>%priority</var></Int><Str sr="arg2"ve="3"/><Str sr="arg3"ve="3"/><Str sr="arg4"ve="3"/><Int sr="arg5"val="0"/><Int sr="arg6"val="0"/><Str sr="arg7"ve="3"/><Int sr="arg8"val="0"/><Int sr="arg9"val="0"/><code>130</code><Int sr="arg10"val="1"/></Action><label>Copy</label></ListElementItem></Action><cdate>1702439931526</cdate><edate>1776154436115</edate></Task><Profile sr="prof119"ve="2"><id>119</id><nme>Current Activity</nme><Event sr="con0"ve="2"><pri>0</pri><App sr="arg0"/><Str sr="arg1"ve="3">Current Activity</Str><code>2000</code></Event><mid0>105</mid0><cdate>1775646065872</cdate><edate>1776154967713</edate><flags>8</flags></Profile><Profile sr="prof266"ve="2"><id>266</id><nme>Current Package</nme><Event sr="con0"ve="2"><pri>0</pri><App sr="arg0"/><Str sr="arg1"ve="3">Current Package</Str><code>2000</code></Event><mid0>105</mid0><cdate>1775646065872</cdate><edate>1776154453182</edate><flags>8</flags></Profile><Project sr="proj0"ve="2"><Kid sr="Kid"><launchID>105</launchID><pkg>reiryuki.currentactivity</pkg><vnme>0.3</vnme><vnum>10</vnum><vTarg>29</vTarg></Kid><Img sr="icon"ve="2"><nme>hd_aaa_conv_a</nme></Img><name>Current Activity</name><pids>119,266</pids><tids>105,264,12,156</tids><Share sr="Share"><b>true</b><d>Current Activity
+by reiryuki</d><g></g><p>false</p><t>Current Activity</t></Share><cdate>1567207421735</cdate><mdate>1776154446392</mdate></Project></TaskerData>
