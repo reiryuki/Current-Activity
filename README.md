@@ -25,13 +25,13 @@ v0.1
 - Initial release
 
 ## Screenshot
-- https://t.me/ryukimodsscreenshots/113
+https://t.me/ryukimodsscreenshots/113
 
 ## Requirements
-- Android 8.1 (SDK 27) and up
+Android 8.1 (SDK 27) and up
 
 ## Download Link
-- https://devuploads.com/yb7pv8wfifb2
+https://devuploads.com/yb7pv8wfifb2
 
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
@@ -42,4 +42,4 @@ v0.1
 - You can contribute ideas about this app/project here: https://t.me/androidappsportdevelopment
 
 ## Sponsors
-- https://t.me/ryukinotes/25
+https://t.me/ryukinotes/25
