@@ -1,7 +1,7 @@
 # Current Activity
 
 ## Descriptions
-An app powered by Tasker
+Android application powered by Tasker to get current package name and activity name on the screen without requiring special permissions such as Accessibility Service nor even root.
 
 ## Features
 - Get current package and activity by clicking the notifications
@@ -9,6 +9,10 @@ An app powered by Tasker
 - Does not require accessibility service nor root
 
 ## Changelog
+
+v0.4
+- Turns off notify click monitor if not needed
+- Target SDK 35
 
 v0.3
 - Separate package and activity notification
@@ -27,7 +31,7 @@ v0.1
 - Android 8.1 (SDK 27) and up
 
 ## Download Link
-- https://devuploads.com/za51wo90q05v
+- https://devuploads.com/yb7pv8wfifb2
 
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
