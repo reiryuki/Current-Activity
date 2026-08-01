@@ -31,7 +31,10 @@ https://t.me/ryukimodsscreenshots/113
 Android 8.1 (SDK 27) and up
 
 ## Download Link
-https://devuploads.com/yb7pv8wfifb2
+https://bicolink.com/aNZfix1J1Y
+
+## Download Tutorial
+https://t.me/ryukinotes/97
 
 ## Support & Bug Report
 - https://t.me/ryukinotes/54
